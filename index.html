@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <!-- Agregamos el meta viewport para un buen comportamiento en móviles -->
+  <!-- Meta viewport para dispositivos móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JUEGO DE HISTORIA DE LOS ROMANOS</title>
   <style>
@@ -17,9 +17,10 @@
       align-items: center;
       text-transform: uppercase;
       padding: 10px;
+      min-height: 100vh;
     }
     
-    /* Header: en desktop se mantiene fijo; en mobile será estático */
+    /* Header fijo en desktop, estático en mobile para evitar tapar contenido */
     header {
       background-color: #a0522d;
       color: white;
@@ -47,7 +48,7 @@
       cursor: pointer;
     }
     
-    /* Contenedor principal */
+    /* Contenedor principal del juego */
     #gameContainer {
       margin-top: 70px;
       width: 100%;
@@ -129,6 +130,12 @@
       z-index: 2000;
     }
     
+    /* Logo en pantalla inicial */
+    #logo {
+      max-width: 200px;
+      margin-bottom: 20px;
+    }
+    
     #startOverlay input[type="text"] {
       font-size: 1.2em;
       padding: 10px;
@@ -152,9 +159,15 @@
       margin-bottom: 20px;
     }
     
-    .avatar-group { text-align: center; flex: 1 1 200px; }
+    .avatar-group {
+      text-align: center;
+      flex: 1 1 200px;
+    }
     
-    .avatar-group h3 { margin-bottom: 10px; font-size: 1em; }
+    .avatar-group h3 {
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
     
     .grid {
       display: grid;
@@ -201,16 +214,22 @@
       100% { transform: translateY(100vh); opacity: 0; }
     }
     
+    /* Footer con firma */
+    footer {
+      font-size: 0.8em;
+      text-align: center;
+      margin-top: 20px;
+      color: #555;
+    }
+    
     /* Media Queries para móviles */
     @media (max-width: 600px) {
-      /* Hacemos el header estático para evitar superposición */
       header {
         position: static;
         flex-direction: column;
         text-align: center;
       }
       #scoreDisplay { margin-bottom: 10px; }
-      /* El contenedor de juego ya no necesita margen extra, ya que el header es parte del flujo */
       #gameContainer { margin-top: 20px; }
       .question { font-size: 1.2em; }
       .option-button { font-size: 1em; padding: 8px; }
@@ -234,6 +253,8 @@
   </div>
 
   <div id="startOverlay">
+    <!-- Logo: asegúrate de tener un archivo logo.png en la carpeta -->
+    <img id="logo" src="images/logo.jpg" alt="APA Esclavas Chamberi">
     <h1>¡BIENVENIDA AL JUEGO DE HISTORIA DE LOS ROMANOS!</h1>
     <p>¿CÓMO TE LLAMAS?</p>
     <input type="text" id="playerName" placeholder="ESCRIBE TU NOMBRE">
@@ -275,6 +296,10 @@
     <button id="startButton">COMENZAR</button>
   </div>
 
+  <footer>
+    Creado por Alfonso Sainz de Baranda, APA Esclavas de Chamberí
+  </footer>
+
   <script>
     // Variables para almacenar datos del juego
     let questions = []; // Se cargarán desde preguntas.json
@@ -284,7 +309,7 @@
     let playerEmoji = "";
     let playerName = "";
     
-    // Cargar preguntas desde el archivo JSON
+    // Cargar preguntas desde preguntas.json
     function loadQuestions() {
       fetch('preguntas.json')
         .then(response => response.json())
@@ -430,7 +455,7 @@
       }
     });
     
-    // Cargar preguntas desde preguntas.json al iniciar
+    // Inicia la carga de preguntas
     loadQuestions();
   </script>
 </body>
