@@ -1,0 +1,333 @@
+[
+    {
+      "question": "¿CUÁL ES LA CIUDAD MÁS FAMOSA DE LOS ROMANOS?",
+      "options": [
+        { "text": "ROMA", "emoji": "🏛️" },
+        { "text": "ATENAS", "emoji": "🏺" },
+        { "text": "CARTAGO", "emoji": "🌊" },
+        { "text": "POMPEYA", "emoji": "🌋" }
+      ],
+      "answer": 0,
+      "explanation": "ROMA, FUNDADA SEGÚN LA LEYENDA POR RÓMULO, ES CONOCIDA POR SUS GRANDES TEMPLOS Y ACUEDUCTOS. SUS MONEDAS Y RELIEVES DOCUMENTAN DETALLES IMPRESIONANTES DEL IMPERIO."
+    },
+    {
+      "question": "¿QUÉ GRAN EDIFICIO SE USABA PARA VER ESPECTÁCULOS Y BATALLAS DE GLADIADORES?",
+      "options": [
+        { "text": "COLISEO", "emoji": "🏟️" },
+        { "text": "TEATRO", "emoji": "🎭" },
+        { "text": "IGLESIA", "emoji": "⛪" },
+        { "text": "MUSEO", "emoji": "🖼️" }
+      ],
+      "answer": 0,
+      "explanation": "EL COLISEO ALBERGABA BATALLAS DE GLADIADORES Y SE INSCRIBEN RELIEVES QUE DOCUMENTAN LAS HAZAÑAS DE GUERREROS, MOSTRANDO EL ORGULLO Y LA PASIÓN ROMANA."
+    },
+    {
+      "question": "¿QUÉ PRENDA DE VESTIR USABAN LOS ROMANOS EN OCASIONES ESPECIALES?",
+      "options": [
+        { "text": "TOGA", "emoji": "👘" },
+        { "text": "CAMISA", "emoji": "👕" },
+        { "text": "VESTIDO", "emoji": "👗" },
+        { "text": "PIJAMA", "emoji": "🛌" }
+      ],
+      "answer": 0,
+      "explanation": "LA TOGA, CONFECCIONADA CON LINO, ERA USADA EN EVENTOS FORMAL Y SIMBOLIZABA EL ESTADO SOCIAL. SUS PLEGUES SE INSCRIBEN EN DOCUMENTOS QUE CONTAN SU IMPORTANCIA."
+    },
+    {
+      "question": "¿QUÉ IDIOMA HABLABAN LOS ROMANOS?",
+      "options": [
+        { "text": "LATÍN", "emoji": "📜" },
+        { "text": "GRIEGO", "emoji": "🏛️" },
+        { "text": "ESPAÑOL", "emoji": "💬" },
+        { "text": "ITALIANO", "emoji": "🍝" }
+      ],
+      "answer": 0,
+      "explanation": "EL LATÍN ERA LA LENGUA OFICIAL DE ROMA, USADA EN LEYES, DOCUMENTOS Y CEREMONIAS. SUS FRASES INSCRITAS SON UN TESTIMONIO DE LA CULTURA MILENARIA."
+    },
+    {
+      "question": "¿QUIÉN FUE EL PRIMER EMPERADOR DE ROMA?",
+      "options": [
+        { "text": "AGUSTO", "emoji": "👑" },
+        { "text": "JULIO CÉSAR", "emoji": "⚔️" },
+        { "text": "NERÓN", "emoji": "🔥" },
+        { "text": "TRAJANO", "emoji": "🛡️" }
+      ],
+      "answer": 0,
+      "explanation": "AGUSTO ESTABLECIÓ EL IMPERIO ROMANO CON UN GOBIERNO ORDENADO. SUS POLÍTICAS Y CONQUISTAS, DOCUMENTADAS EN RELIEVES Y MONEDAS, SENTARON LAS BASES DEL IMPERIO."
+    },
+    {
+      "question": "¿QUIÉN, SEGÚN LA LEYENDA, FUNDÓ LA CIUDAD DE ROMA?",
+      "options": [
+        { "text": "RÓMULO", "emoji": "👦" },
+        { "text": "REMO", "emoji": "👶" },
+        { "text": "ENEAS", "emoji": "🚶" },
+        { "text": "MARCO POLO", "emoji": "🌍" }
+      ],
+      "answer": 0,
+      "explanation": "LA LEYENDA RELATA QUE RÓMULO Y REMO FUERON CRIADOS POR UNA LOBEZNA, Y RÓMULO FUNDÓ ROMA. ESTE MITO INSCRITO EN TEXTOS ANTIGUOS REFLEJA VALORES Y AVENTURAS."
+    },
+    {
+      "question": "¿QUÉ RÍO ATRAVIESA LA CIUDAD DE ROMA?",
+      "options": [
+        { "text": "TÍBER", "emoji": "🌊" },
+        { "text": "NILO", "emoji": "🐫" },
+        { "text": "RIN", "emoji": "🚣" },
+        { "text": "DANUBIO", "emoji": "🏞️" }
+      ],
+      "answer": 0,
+      "explanation": "EL RÍO TÍBER, CON SUS AGUAS VITALES, FUE FUNDAMENTAL PARA EL COMERCIO Y EL TRANSPORTE EN ROMA. DOCUMENTOS ANTIGUOS DESTACAN SU ROL EN EL DESARROLLO DE LA CIUDAD."
+    },
+    {
+      "question": "¿QUÉ VEHÍCULO USABAN LOS ROMANOS EN LAS CARRERAS?",
+      "options": [
+        { "text": "CARRO", "emoji": "🏎️" },
+        { "text": "BICICLETA", "emoji": "🚲" },
+        { "text": "TREN", "emoji": "🚆" },
+        { "text": "AVIÓN", "emoji": "✈️" }
+      ],
+      "answer": 0,
+      "explanation": "LOS CARROS, IMPULSADOS POR CABALLOS, ERA UN MEDIO DE TRANSPORTE Y DEPORTE. LAS CARRERAS ROMANAS ERAN EVENTOS LLENOS DE EMOCIÓN, DOCUMENTADOS EN RELIEVES Y TEXTOS MILITARES."
+    },
+    {
+      "question": "¿QUÉ ALIMENTO BÁSICO COMÍAN MUCHOS ROMANOS?",
+      "options": [
+        { "text": "PAN", "emoji": "🍞" },
+        { "text": "ARROZ", "emoji": "🍚" },
+        { "text": "TACOS", "emoji": "🌮" },
+        { "text": "HAMBURGUESA", "emoji": "🍔" }
+      ],
+      "answer": 0,
+      "explanation": "EL PAN, HECHO CON TRIGO, ERA FUNDAMENTAL EN LA DIETA ROMANA. TEXTOS ANTIGUOS DESTACAN SU PRODUCCIÓN, CON DETALLES QUE MUESTRAN SU IMPORTANCIA COMO ALIMENTO BÁSICO."
+    },
+    {
+      "question": "¿QUÉ BEBIDA BEBÍAN EN LAS CELEBRACIONES ROMANAS?",
+      "options": [
+        { "text": "VINO", "emoji": "🍷" },
+        { "text": "LECHE", "emoji": "🥛" },
+        { "text": "JUGO", "emoji": "🧃" },
+        { "text": "AGUA", "emoji": "💧" }
+      ],
+      "answer": 0,
+      "explanation": "EL VINO ERA MUY POPULAR EN LAS FIESTAS. RELIEVES Y MONEDAS DESTACAN INSCRIPCIONES QUE VINCULAN ESTA BEBIDA CON DIOSAS, REFLEJANDO SU ROL CULTURAL EN ROMA."
+    },
+    {
+      "question": "¿QUÉ FESTIVIDAD ROMANA CELEBRABAN EN INVIERNO CON REGALOS Y FIESTAS?",
+      "options": [
+        { "text": "SATURNALIA", "emoji": "🎉" },
+        { "text": "NAVIDAD", "emoji": "🎄" },
+        { "text": "HALLOWEEN", "emoji": "👻" },
+        { "text": "PASCUA", "emoji": "🐰" }
+      ],
+      "answer": 0,
+      "explanation": "SATURNALIA ERA UNA FESTIVIDAD INVERNAL CON REGALOS, BANQUETES Y BAILES. DOCUMENTOS ANTIGUOS RELATAN UN DÍA DE CAMBIO, ALEGRÍA Y FIESTAS EN LA SOCIEDAD ROMANA."
+    },
+    {
+      "question": "¿QUÉ FAMOSO LÍDER ROMANO CRUZÓ EL RUBICÓN?",
+      "options": [
+        { "text": "JULIO CÉSAR", "emoji": "⚔️" },
+        { "text": "AGUSTO", "emoji": "👑" },
+        { "text": "CICERÓN", "emoji": "📜" },
+        { "text": "TRAJANO", "emoji": "🛡️" }
+      ],
+      "answer": 0,
+      "explanation": "JULIO CÉSAR CRUZÓ EL RUBICÓN, DECIDIENDO QUE NO HABÍA VUELTA ATRÁS. ESTE ACTO VALIENTE ESTÁ DOCUMENTADO EN RELIEVES Y MONEDAS, MARCANDO UN CAMBIO DECISIVO EN LA HISTORIA."
+    },
+    {
+      "question": "¿QUÉ MES DEL AÑO LLEVA EL NOMBRE DE UN FAMOSO LÍDER ROMANO?",
+      "options": [
+        { "text": "JULIO", "emoji": "📅" },
+        { "text": "MARZO", "emoji": "🌷" },
+        { "text": "ABRIL", "emoji": "🌦️" },
+        { "text": "MAYO", "emoji": "🌸" }
+      ],
+      "answer": 0,
+      "explanation": "EL MES DE JULIO RECIBE SU NOMBRE DE JULIO CÉSAR, RECORDADO POR SU VALENTÍA Y GRANDES EVENTOS. INSCRIPCIONES ANTIGUAS NOS CONTAN UN PERÍODO DE SOL Y FIESTAS."
+    },
+    {
+      "question": "¿QUÉ MES DEL AÑO LLEVA EL NOMBRE DEL EMPERADOR AGUSTO?",
+      "options": [
+        { "text": "AGOSTO", "emoji": "☀️" },
+        { "text": "SEPTIEMBRE", "emoji": "🍂" },
+        { "text": "OCTUBRE", "emoji": "🎃" },
+        { "text": "NOVIEMBRE", "emoji": "🍁" }
+      ],
+      "answer": 0,
+      "explanation": "AGOSTO SE LLAMA ASÍ POR EL EMPERADOR AGUSTO, CUYO GOBIERNO TRAJO PROSPERIDAD A ROMA. DOCUMENTOS HISTÓRICOS DESTACAN SU IMPACTO Y LOS DÍAS CALIENTES DEL IMPERIO."
+    },
+    {
+      "question": "¿QUÉ CONSTRUCCIÓN AYUDABA A LLEVAR AGUA A LA CIUDAD?",
+      "options": [
+        { "text": "ACUEDUCTO", "emoji": "🌉" },
+        { "text": "CARRETERA", "emoji": "🛣️" },
+        { "text": "PUENTE", "emoji": "🌁" },
+        { "text": "MURALLA", "emoji": "🏰" }
+      ],
+      "answer": 0,
+      "explanation": "EL ACUEDUCTO TRANSPORTABA AGUA A ROMA CON IMPONENTES ARCOS. SUS DISEÑOS SON UN EJEMPLO DEL GENIO INGENIERIL QUE IMPULSÓ EL CRECIMIENTO DEL IMPERIO."
+    },
+    {
+      "question": "¿CÓMO SE LLAMABAN LOS SOLDADOS DEL EJÉRCITO ROMANO?",
+      "options": [
+        { "text": "LEGIONARIOS", "emoji": "🛡️" },
+        { "text": "CABALLEROS", "emoji": "🐎" },
+        { "text": "SAMURÁIS", "emoji": "⚔️" },
+        { "text": "PIRATAS", "emoji": "🏴‍☠️" }
+      ],
+      "answer": 0,
+      "explanation": "LOS LEGIONARIOS ERAN SOLDADOS DISCIPLINADOS Y ORGANIZADOS, CUYA FORMA DE COMBATIR Y EQUIPAMIENTO ESTÁ DOCUMENTADO EN TEXTOS Y RELIEVES MILITARES."
+    },
+    {
+      "question": "¿QUÉ ANIMAL ERA SÍMBOLO DE PODER EN EL EJÉRCITO ROMANO?",
+      "options": [
+        { "text": "ÁGUILA", "emoji": "🦅" },
+        { "text": "LEÓN", "emoji": "🦁" },
+        { "text": "OSO", "emoji": "🐻" },
+        { "text": "ELEFANTE", "emoji": "🐘" }
+      ],
+      "answer": 0,
+      "explanation": "EL ÁGUILA APARECÍA EN ESTANDARTES Y MONEDAS, SIMBOLIZANDO LA FUERZA Y ORGULLO DE ROMA. SUS DETALLES INSCRITOS SON UN TESTIMONIO DE LOS LOGROS MILITARES."
+    },
+    {
+      "question": "¿QUÉ INSTRUMENTO MUSICAL ERA COMÚN EN LAS FESTIVIDADES ROMANAS?",
+      "options": [
+        { "text": "TROMPETA", "emoji": "🎺" },
+        { "text": "GUITARRA", "emoji": "🎸" },
+        { "text": "PIANO", "emoji": "🎹" },
+        { "text": "VIOLÍN", "emoji": "🎻" }
+      ],
+      "answer": 0,
+      "explanation": "LA TROMPETA TENÍA UN SONIDO POTENTE Y SE USABA EN CEREMONIAS. INSCRIPCIONES EN RELIEVES DESTACAN SU USO EN EVENTOS IMPORTANTES DEL IMPERIO ROMANO."
+    },
+    {
+      "question": "¿QUÉ USABAN LOS GLADIADORES PARA PROTEGERSE?",
+      "options": [
+        { "text": "ESCUDO", "emoji": "🛡️" },
+        { "text": "CASCO", "emoji": "⛑️" },
+        { "text": "ARMADURA", "emoji": "🥋" },
+        { "text": "CAPA", "emoji": "🧣" }
+      ],
+      "answer": 0,
+      "explanation": "EL ESCUDO ERA FUNDAMENTAL PARA LOS GLADIADORES. SUS DISEÑOS, QUE A MENUDO INCLUÍAN INSCRIPCIONES, DEMUESTRAN LA IMPORTANCIA DE LA PROTECCIÓN Y LA DISCIPLINA MILITAR."
+    },
+    {
+      "question": "¿QUÉ EDIFICIO ROMANO SE UTILIZABA PARA VER CARRERAS Y EVENTOS DEPORTIVOS?",
+      "options": [
+        { "text": "CIRCO MÁXIMO", "emoji": "🏟️" },
+        { "text": "ESTADIO OLÍMPICO", "emoji": "🥇" },
+        { "text": "COLISEO", "emoji": "🏛️" },
+        { "text": "AUDITORIO", "emoji": "🎭" }
+      ],
+      "answer": 0,
+      "explanation": "EL CIRCO MÁXIMO ERA UNA ENORME ARENA PARA CARRERAS DE CARROS, DONDE SE CELEBRABAN GRANDES EVENTOS. DOCUMENTOS Y RELIEVES DESTACAN SU IMPONENTE ESTRUCTURA."
+    },
+    {
+      "question": "¿QUÉ MATERIAL DE CONSTRUCCIÓN INVENTARON LOS ROMANOS PARA CONSTRUIR GRANDES EDIFICIOS?",
+      "options": [
+        { "text": "HORMIGÓN", "emoji": "🏗️" },
+        { "text": "MADERA", "emoji": "🪵" },
+        { "text": "LADRILLO", "emoji": "🧱" },
+        { "text": "VIDRIO", "emoji": "🪟" }
+      ],
+      "answer": 0,
+      "explanation": "EL HORMIGÓN ROMANO PERMITIÓ CONSTRUIR ESTRUCTURAS IMPONENTES Y DURADERAS. SUS FORMULAS SON UN EJEMPLO DEL GENIO INGENIERIL QUE HIZO A ROMA INMORTAL."
+    },
+    {
+      "question": "¿CÓMO SE LLAMABA LA DIOSA ROMANA DE LA SABIDURÍA Y LAS ARTES?",
+      "options": [
+        { "text": "MINERVA", "emoji": "🦉" },
+        { "text": "VENUS", "emoji": "💖" },
+        { "text": "JUNO", "emoji": "👑" },
+        { "text": "DIANA", "emoji": "🌙" }
+      ],
+      "answer": 0,
+      "explanation": "MINERVA ERA LA DIOSA DE LA SABIDURÍA Y LAS ARTES, Y SUS ESTÁTUIAS MUESTRAN DETALLES FINOS QUE DOCUMENTAN UN MUNDO DE CONOCIMIENTO. SUS INSCRIPCIONES SON TESTIMONIO DE SU IMPORTANCIA."
+    },
+    {
+      "question": "¿QUÉ ANIMAL ESTÁ RELACIONADO CON LA LEYENDA DE RÓMULO Y REMO?",
+      "options": [
+        { "text": "LOBO", "emoji": "🐺" },
+        { "text": "PERRO", "emoji": "🐶" },
+        { "text": "GATO", "emoji": "🐱" },
+        { "text": "CONEJO", "emoji": "🐰" }
+      ],
+      "answer": 0,
+      "explanation": "LA LEYENDA DICE QUE UN LOBO CRIÓ A RÓMULO Y REMO. ESTE MITO, DOCUMENTADO EN TEXTOS ANTIGUOS, REFLEJA VALORES DE CORAJE Y AMISTAD QUE SE INSCRIBEN EN RELIEVES HISTÓRICOS."
+    },
+    {
+      "question": "¿DE QUÉ COLOR ERA LA TOGA DE LOS CIUDADANOS ROMANOS?",
+      "options": [
+        { "text": "BLANCA", "emoji": "⚪" },
+        { "text": "NEGRA", "emoji": "⚫" },
+        { "text": "ROJA", "emoji": "🔴" },
+        { "text": "VERDE", "emoji": "🟢" }
+      ],
+      "answer": 0,
+      "explanation": "LA TOGA BLANCA SIMBOLIZABA PUREZA Y BUENOS VALORES. DOCUMENTOS Y RELIEVES ANTIGUOS MUESTRAN QUE SU DISEÑO ERA UN SIGNO DE ESTADO Y RESPETO."
+    },
+    {
+      "question": "¿QUÉ EDIFICIO ROMANO ERA FAMOSO POR SUS BAÑOS?",
+      "options": [
+        { "text": "TERMAS", "emoji": "♨️" },
+        { "text": "IGLESIA", "emoji": "⛪" },
+        { "text": "BIBLIOTECA", "emoji": "📚" },
+        { "text": "CASTILLO", "emoji": "🏰" }
+      ],
+      "answer": 0,
+      "explanation": "LOS TERMAS ERAN BAÑOS PÚBLICOS DONDE LOS ROMANOS SE LIMPIABAN Y SOCIALIZABAN. INSCRIPCIONES Y RELIEVES DOCUMENTAN SU IMPORTANCIA EN LA VIDA DIARIA."
+    },
+    {
+      "question": "¿QUÉ GRAN CAMINO CONECTABA ROMA CON OTRAS CIUDADES?",
+      "options": [
+        { "text": "VÍA APIA", "emoji": "🛣️" },
+        { "text": "AUTOPISTA", "emoji": "🚗" },
+        { "text": "CAMINO REAL", "emoji": "🛤️" },
+        { "text": "RUTA 66", "emoji": "🛣️" }
+      ],
+      "answer": 0,
+      "explanation": "LA VÍA APIA UNÍA ROMA CON OTRAS CIUDADES Y FACILITABA EL COMERCIO. SUS ARCOS SON UN EJEMPLO DEL GENIO INGENIERIL ROMANO, DOCUMENTADO EN VARIOS RELIEVES."
+    },
+    {
+      "question": "¿QUÉ ANIMAL SE USABA EN LAS CARRERAS DE CARROS?",
+      "options": [
+        { "text": "CABALLO", "emoji": "🐎" },
+        { "text": "BURRO", "emoji": "🐴" },
+        { "text": "TORO", "emoji": "🐂" },
+        { "text": "PERRO", "emoji": "🐕" }
+      ],
+      "answer": 0,
+      "explanation": "LOS CABALLOS, CON SU FUERZA Y AGILIDAD, ERAN CLAVE EN LAS CARRERAS ROMANAS. DOCUMENTOS ANTIGUOS DESTACAN SU ROL EN EVENTOS LLENOS DE EMOCIÓN."
+    },
+    {
+      "question": "¿QUÉ TIPO DE MONEDA USABAN EN EL IMPERIO ROMANO?",
+      "options": [
+        { "text": "DENARIO", "emoji": "💰" },
+        { "text": "DÓLAR", "emoji": "💵" },
+        { "text": "EURO", "emoji": "💶" },
+        { "text": "PESO", "emoji": "💴" }
+      ],
+      "answer": 0,
+      "explanation": "EL DENARIO LLEVABA INSCRIPCIONES Y DISEÑOS DETALLADOS, CON IMÁGENES DE DIOSAS Y HÉROES. ESTOS DETALLES SON UN TESTIMONIO DEL ORGULLO Y LA ECONOMÍA ROMANA."
+    },
+    {
+      "question": "¿QUÉ SE CONSTRUYÓ PARA HONRAR A LOS DIOSES ROMANOS?",
+      "options": [
+        { "text": "TEMPLOS", "emoji": "🏛️" },
+        { "text": "ESCUELAS", "emoji": "🏫" },
+        { "text": "MUSEOS", "emoji": "🖼️" },
+        { "text": "PARQUES", "emoji": "🌳" }
+      ],
+      "answer": 0,
+      "explanation": "LOS TEMPLOS ERAN LUGARES SAGRADOS DONDE LOS ROMANOS OFRECIAN OFRENDAS A SUS DIOSES. COLUMNAS, ARCOS E INSCRIPCIONES DOCUMENTAN RITUALES Y CRENCIAS."
+    },
+    {
+      "question": "¿QUÉ INVENTO AYUDÓ A QUE ROMA PUDIERA CRECER Y CONECTARSE?",
+      "options": [
+        { "text": "LAS CARRETERAS", "emoji": "🛣️" },
+        { "text": "EL TELÉFONO", "emoji": "📞" },
+        { "text": "EL AVIÓN", "emoji": "✈️" },
+        { "text": "EL TREN", "emoji": "🚆" }
+      ],
+      "answer": 0,
+      "explanation": "LAS CARRETERAS ROMANAS CONECTABAN CIUDADES Y FACILITABAN EL TRANSPORTE. SU DISEÑO DURADERO ES UN EJEMPLO DEL GENIO INGENIERIL QUE IMPULSÓ EL IMPERIO."
+    }
+  ]
+  

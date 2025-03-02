@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>JUEGO DE HISTORIA DE LOS ROMANOS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0e6d6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-transform: uppercase;
+    }
+    header {
+      background-color: #a0522d;
+      color: white;
+      width: 100%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    #scoreDisplay {
+      font-size: 1.5em;
+    }
+    #restartButton {
+      background-color: #90ee90;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    #gameContainer {
+      margin-top: 70px;
+      width: 90%;
+      max-width: 600px;
+      background-color: #fffaf0;
+      border: 2px solid #a0522d;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .question {
+      font-size: 1.3em;
+      margin-bottom: 20px;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+    }
+    .option-button {
+      background-color: #ffcccb;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 5px 0;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .option-button:hover {
+      background-color: #f08080;
+    }
+    #feedback {
+      margin-top: 10px;
+      font-size: 1.1em;
+      font-weight: bold;
+      text-align: center;
+      min-height: 40px;
+    }
+    #explanation {
+      margin-top: 10px;
+      font-size: 1em;
+      border: 1px solid #a0522d;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: #fff;
+      text-align: left;
+      line-height: 1.3em;
+      min-height: 60px;
+    }
+    #nextButton {
+      background-color: #add8e6;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      cursor: pointer;
+      margin-top: 20px;
+      display: none;
+    }
+    /* Overlay de inicio */
+    #startOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(240,230,214,0.95);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto;
+      padding: 20px;
+      z-index: 2000;
+    }
+    #startOverlay input[type="text"] {
+      font-size: 1.2em;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      text-transform: none;
+    }
+    /* Selección de avatar */
+    #emojiSelection {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+    }
+    .avatar-group {
+      text-align: center;
+    }
+    .avatar-group h3 {
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+      gap: 5px;
+    }
+    .emoji-button {
+      font-size: 2em;
+      cursor: pointer;
+      margin: 5px;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      padding: 5px;
+    }
+    .emoji-selected {
+      border-color: #a0522d;
+      background-color: #ffe4e1;
+    }
+    #startButton {
+      background-color: #add8e6;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    /* Efectos visuales de caída */
+    .effect {
+      position: fixed;
+      pointer-events: none;
+      z-index: 3000;
+      display: inline-block;
+      top: -50px;
+      animation: fall 3s ease-out forwards;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <span id="scoreDisplay">JUGADOR: - PUNTOS: 0</span>
+    <button id="restartButton">VOLVER A EMPEZAR</button>
+  </header>
+
+  <div id="gameContainer">
+    <div id="questionContainer" class="question"></div>
+    <div id="optionsContainer" class="options"></div>
+    <div id="feedback"></div>
+    <div id="explanation"></div>
+    <button id="nextButton">CONTINUA A LA SIGUIENTE PREGUNTA</button>
+  </div>
+
+  <div id="startOverlay">
+    <h1>¡BIENVENIDA AL JUEGO DE HISTORIA DE LOS ROMANOS!</h1>
+    <p>¿CÓMO TE LLAMAS?</p>
+    <input type="text" id="playerName" placeholder="ESCRIBE TU NOMBRE">
+    <p>ELIGE TU AVATAR:</p>
+    <div id="emojiSelection">
+      <div class="avatar-group" id="avatarBoys">
+        <h3>NIÑOS</h3>
+        <div class="grid">
+          <span class="emoji-button" data-emoji="👦🏻">👦🏻</span>
+          <span class="emoji-button" data-emoji="👦🏼">👦🏼</span>
+          <span class="emoji-button" data-emoji="👦🏽">👦🏽</span>
+          <span class="emoji-button" data-emoji="👦🏾">👦🏾</span>
+          <span class="emoji-button" data-emoji="👦🏿">👦🏿</span>
+          <span class="emoji-button" data-emoji="🧒🏻">🧒🏻</span>
+          <span class="emoji-button" data-emoji="🧒🏼">🧒🏼</span>
+          <span class="emoji-button" data-emoji="🧒🏽">🧒🏽</span>
+          <span class="emoji-button" data-emoji="🧒🏾">🧒🏾</span>
+          <span class="emoji-button" data-emoji="🧒🏿">🧒🏿</span>
+          <span class="emoji-button" data-emoji="🧑🏻">🧑🏻</span>
+        </div>
+      </div>
+      <div class="avatar-group" id="avatarGirls">
+        <h3>NIÑAS</h3>
+        <div class="grid">
+          <span class="emoji-button" data-emoji="👧🏻">👧🏻</span>
+          <span class="emoji-button" data-emoji="👧🏼">👧🏼</span>
+          <span class="emoji-button" data-emoji="👧🏽">👧🏽</span>
+          <span class="emoji-button" data-emoji="👧🏾">👧🏾</span>
+          <span class="emoji-button" data-emoji="👧🏿">👧🏿</span>
+          <span class="emoji-button" data-emoji="👶🏻">👶🏻</span>
+          <span class="emoji-button" data-emoji="👶🏼">👶🏼</span>
+          <span class="emoji-button" data-emoji="👶🏽">👶🏽</span>
+          <span class="emoji-button" data-emoji="👶🏾">👶🏾</span>
+          <span class="emoji-button" data-emoji="👶🏿">👶🏿</span>
+          <span class="emoji-button" data-emoji="🧑🏼">🧑🏼</span>
+        </div>
+      </div>
+    </div>
+    <button id="startButton">COMENZAR</button>
+  </div>
+
+  <script>
+    let questions = []; // Se cargarán desde preguntas.json
+    let shuffledQuestions = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let playerEmoji = "";
+    let playerName = "";
+    
+    // Cargar preguntas desde preguntas.json
+    function loadQuestions() {
+      fetch('preguntas.json')
+        .then(response => response.json())
+        .then(data => {
+          questions = data;
+          shuffleQuestions();
+          showQuestion();
+        })
+        .catch(error => console.error('Error cargando preguntas:', error));
+    }
+    
+    function shuffleArray(arr) {
+      return arr.sort(() => Math.random() - 0.5);
+    }
+    
+    function shuffleQuestions() {
+      shuffledQuestions = shuffleArray([...questions]);
+    }
+    
+    function updateHeader() {
+      document.getElementById("scoreDisplay").textContent = `JUGADOR: ${playerName} ${playerEmoji} - PUNTOS: ${score}`;
+    }
+    
+    function showQuestion() {
+      document.getElementById("feedback").textContent = "";
+      document.getElementById("explanation").textContent = "";
+      document.getElementById("nextButton").style.display = "none";
+      
+      if (currentQuestionIndex >= shuffledQuestions.length) {
+        alert("¡HAS COMPLETADO TODAS LAS PREGUNTAS! EMPEZANDO DE NUEVO.");
+        resetGame();
+        return;
+      }
+      
+      const questionObj = shuffledQuestions[currentQuestionIndex];
+      const questionContainer = document.getElementById("questionContainer");
+      const optionsContainer = document.getElementById("optionsContainer");
+      
+      const originalOptions = questionObj.options;
+      const shuffledOptions = shuffleArray([...originalOptions]);
+      const correctText = originalOptions[questionObj.answer].text;
+      const newCorrectIndex = shuffledOptions.findIndex(opt => opt.text === correctText);
+      
+      questionObj.shuffledOptions = shuffledOptions;
+      questionObj.shuffledAnswer = newCorrectIndex;
+      
+      questionContainer.textContent = questionObj.question;
+      optionsContainer.innerHTML = "";
+      shuffledOptions.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.className = "option-button";
+        button.textContent = `${option.emoji}  ${option.text}`;
+        button.onclick = () => checkAnswer(index);
+        optionsContainer.appendChild(button);
+      });
+    }
+    
+    function checkAnswer(selectedIndex) {
+      const questionObj = shuffledQuestions[currentQuestionIndex];
+      const feedbackEl = document.getElementById("feedback");
+      const explanationEl = document.getElementById("explanation");
+      const correctText = questionObj.shuffledOptions[questionObj.shuffledAnswer].text;
+      
+      if (selectedIndex === questionObj.shuffledAnswer) {
+        score += 10;
+        feedbackEl.textContent = "RESPUESTA CORRECTA, ¡ENHORABUENA!";
+        showCorrectEffect();
+      } else {
+        score -= 5;
+        feedbackEl.textContent = "RESPUESTA INCORRECTA, LA RESPUESTA ERA " + correctText;
+        showWrongEffect();
+      }
+      explanationEl.textContent = questionObj.explanation;
+      updateHeader();
+      currentQuestionIndex++;
+      document.getElementById("nextButton").style.display = "block";
+    }
+    
+    function showCorrectEffect() {
+      for (let i = 0; i < 10; i++) {
+        createFallingEmoji(["🎉", "🎊", "🐱"]);
+      }
+    }
+    
+    function showWrongEffect() {
+      for (let i = 0; i < 10; i++) {
+        createFallingEmoji(["😢", "☹️"]);
+      }
+    }
+    
+    function createFallingEmoji(emojiArray) {
+      const emoji = emojiArray[Math.floor(Math.random() * emojiArray.length)];
+      const span = document.createElement("span");
+      span.className = "effect";
+      span.style.left = Math.random() * 100 + "vw";
+      span.style.top = "-50px";
+      span.style.fontSize = (Math.random() * 24 + 24) + "px";
+      span.textContent = emoji;
+      document.body.appendChild(span);
+      setTimeout(() => span.remove(), 3000);
+    }
+    
+    function resetGame() {
+      score = 0;
+      currentQuestionIndex = 0;
+      playerName = "";
+      playerEmoji = "";
+      document.getElementById("playerName").value = "";
+      document.querySelectorAll(".emoji-button").forEach(btn => btn.classList.remove("emoji-selected"));
+      updateHeader();
+      document.getElementById("startOverlay").style.display = "flex";
+    }
+    
+    document.querySelectorAll(".emoji-button").forEach(button => {
+      button.addEventListener("click", () => {
+        const group = button.parentElement;
+        group.querySelectorAll(".emoji-button").forEach(btn => btn.classList.remove("emoji-selected"));
+        button.classList.add("emoji-selected");
+        playerEmoji = button.getAttribute("data-emoji");
+      });
+    });
+    
+    document.getElementById("startButton").addEventListener("click", () => {
+      const nameInput = document.getElementById("playerName").value.trim();
+      if (nameInput === "" || playerEmoji === "") {
+        alert("POR FAVOR, INGRESA TU NOMBRE Y ELIGE UN AVATAR.");
+        return;
+      }
+      playerName = nameInput;
+      updateHeader();
+      document.getElementById("startOverlay").style.display = "none";
+      shuffleQuestions();
+      showQuestion();
+    });
+    
+    document.getElementById("nextButton").addEventListener("click", () => {
+      showQuestion();
+    });
+    
+    document.getElementById("restartButton").addEventListener("click", () => {
+      if (confirm("¿DESEAS VOLVER A EMPEZAR?")) {
+        resetGame();
+      }
+    });
+    
+    // Inicia la carga de preguntas desde preguntas.json
+    loadQuestions();
+  </script>
+</body>
+</html>
