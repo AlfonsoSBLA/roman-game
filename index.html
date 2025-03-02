@@ -2,17 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JUEGO DE HISTORIA DE LOS ROMANOS</title>
   <style>
+    /* Estilos base y responsive */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: Arial, sans-serif;
       background-color: #f0e6d6;
-      margin: 0;
-      padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-transform: uppercase;
+      padding: 10px;
     }
     header {
       background-color: #a0522d;
@@ -22,15 +24,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-sizing: border-box;
       position: fixed;
       top: 0;
       left: 0;
       z-index: 1000;
     }
-    #scoreDisplay {
-      font-size: 1.5em;
-    }
+    #scoreDisplay { font-size: 1.5em; }
     #restartButton {
       background-color: #90ee90;
       border: none;
@@ -41,7 +40,7 @@
     }
     #gameContainer {
       margin-top: 70px;
-      width: 90%;
+      width: 100%;
       max-width: 600px;
       background-color: #fffaf0;
       border: 2px solid #a0522d;
@@ -49,14 +48,8 @@
       padding: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .question {
-      font-size: 1.3em;
-      margin-bottom: 20px;
-    }
-    .options {
-      display: flex;
-      flex-direction: column;
-    }
+    .question { font-size: 1.3em; margin-bottom: 20px; }
+    .options { display: flex; flex-direction: column; }
     .option-button {
       background-color: #ffcccb;
       border: none;
@@ -67,9 +60,7 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
-    .option-button:hover {
-      background-color: #f08080;
-    }
+    .option-button:hover { background-color: #f08080; }
     #feedback {
       margin-top: 10px;
       font-size: 1.1em;
@@ -101,10 +92,8 @@
     /* Overlay de inicio */
     #startOverlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background-color: rgba(240,230,214,0.95);
       display: flex;
       flex-direction: column;
@@ -119,11 +108,13 @@
       margin: 10px;
       border-radius: 5px;
       border: 1px solid #ccc;
+      width: 90%; max-width: 400px;
       text-transform: none;
     }
     /* Selección de avatar */
     #emojiSelection {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
       width: 100%;
@@ -131,16 +122,11 @@
       overflow-y: auto;
       margin-bottom: 20px;
     }
-    .avatar-group {
-      text-align: center;
-    }
-    .avatar-group h3 {
-      margin-bottom: 10px;
-      font-size: 1em;
-    }
+    .avatar-group { text-align: center; flex: 1 1 200px; }
+    .avatar-group h3 { margin-bottom: 10px; font-size: 1em; }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
       gap: 5px;
     }
     .emoji-button {
@@ -176,6 +162,16 @@
     @keyframes fall {
       0% { transform: translateY(0); opacity: 1; }
       100% { transform: translateY(100vh); opacity: 0; }
+    }
+    /* Media Queries para móviles */
+    @media (max-width: 600px) {
+      header { flex-direction: column; text-align: center; }
+      #scoreDisplay { margin-bottom: 10px; }
+      #gameContainer { width: 100%; padding: 15px; }
+      .question { font-size: 1.2em; }
+      .option-button { font-size: 1em; padding: 8px; }
+      #feedback, #explanation { font-size: 0.9em; }
+      #nextButton { font-size: 1em; padding: 8px 16px; }
     }
   </style>
 </head>
@@ -236,14 +232,13 @@
   </div>
 
   <script>
-    let questions = []; // Se cargarán desde preguntas.json
+    let questions = []; // se cargarán desde preguntas.json
     let shuffledQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
     let playerEmoji = "";
     let playerName = "";
     
-    // Cargar preguntas desde preguntas.json
     function loadQuestions() {
       fetch('preguntas.json')
         .then(response => response.json())
@@ -389,7 +384,6 @@
       }
     });
     
-    // Inicia la carga de preguntas desde preguntas.json
     loadQuestions();
   </script>
 </body>
