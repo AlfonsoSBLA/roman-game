@@ -5,117 +5,106 @@
   <!-- Meta viewport para dispositivos móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JUEGO DE HISTORIA DE LOS ROMANOS</title>
+  
+  <!-- Open Graph Meta Tags para compartir en redes sociales -->
+  <meta property="og:title" content="Historia de los Romanos para Carmencitos - APA Esclavas Chamberi">
+  <meta property="og:description" content="¡Responde a las preguntas sobre los Romanos desde donde quieras!">
+  <meta property="og:image" content="images/Logo.jpg">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Historia de los Romanos para Carmencitos - APA Esclavas Chamberi">
+  <meta name="twitter:description" content="¡Responde a las preguntas sobre los Romanos desde donde quieras!">
+  <meta name="twitter:image" content="images/Logo.jpg">
+  
   <style>
-    /* Reset básico */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
       font-family: Arial, sans-serif;
-      background-color: #f0e6d6; /* Fondo neutro */
+      background-color: #f0e6d6;
+      margin: 0;
+      padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-transform: uppercase;
-      padding: 10px;
-      min-height: 100vh;
     }
-
-    /* Header fijo en desktop, estático en mobile para evitar tapar contenido */
     header {
-      background-color: #0A2E40; /* Azul marino muy oscuro */
+      background-color: #a0522d;
       color: white;
       width: 100%;
       padding: 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      box-sizing: border-box;
       position: fixed;
       top: 0;
       left: 0;
       z-index: 1000;
     }
-
     #scoreDisplay {
       font-size: 1.5em;
     }
-
     #restartButton {
-      background-color: #C2191C; /* Rojo */
-      color: #fff;
+      background-color: #90ee90;
       border: none;
       border-radius: 5px;
       padding: 5px 10px;
       font-size: 1em;
       cursor: pointer;
     }
-
-    /* Contenedor principal del juego */
     #gameContainer {
       margin-top: 70px;
-      width: 100%;
+      width: 90%;
       max-width: 600px;
-      background-color: #fff; /* Fondo blanco para resaltar botones */
-      border: 2px solid #22384A; /* Azul oscuro */
+      background-color: #fffaf0;
+      border: 2px solid #a0522d;
       border-radius: 10px;
       padding: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
     .question {
       font-size: 1.3em;
       margin-bottom: 20px;
     }
-
     .options {
       display: flex;
       flex-direction: column;
     }
-
     .option-button {
-      background-color: #53BFD0; /* Turquesa claro */
-      color: #0A2E40; /* Texto en azul marino muy oscuro */
+      background-color: #ffcccb;
       border: none;
       border-radius: 5px;
       padding: 10px;
       margin: 5px 0;
       font-size: 1.1em;
       cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.3s;
     }
     .option-button:hover {
-      background-color: #3AA3B8; /* Turquesa algo más oscuro */
-      color: #fff;
+      background-color: #f08080;
     }
-
     #feedback {
       margin-top: 10px;
       font-size: 1.1em;
       font-weight: bold;
       text-align: center;
       min-height: 40px;
-      color: #C2191C; /* Podríamos usar rojo en el feedback si se desea */
     }
-
     #explanation {
       margin-top: 10px;
       font-size: 1em;
-      border: 1px solid #22384A; /* Azul oscuro */
+      border: 1px solid #a0522d;
       border-radius: 5px;
       padding: 10px;
       background-color: #fff;
       text-align: left;
       line-height: 1.3em;
       min-height: 60px;
-      color: #0A2E40;
     }
-
     #nextButton {
-      background-color: #C2191C; /* Podríamos usar rojo para destacar */
-      color: #fff;
+      background-color: #add8e6;
       border: none;
       border-radius: 5px;
       padding: 10px 20px;
@@ -123,16 +112,12 @@
       cursor: pointer;
       margin-top: 20px;
       display: none;
-      transition: background-color 0.3s, color 0.3s;
     }
-    #nextButton:hover {
-      background-color: #A61719; /* Un rojo más oscuro */
-    }
-
     /* Overlay de inicio */
     #startOverlay {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       background-color: rgba(240,230,214,0.95);
@@ -143,28 +128,17 @@
       padding: 20px;
       z-index: 2000;
     }
-
-    /* Logo en pantalla inicial */
-    #logo {
-      max-width: 200px;
-      margin-bottom: 20px;
-    }
-
     #startOverlay input[type="text"] {
       font-size: 1.2em;
       padding: 10px;
       margin: 10px;
       border-radius: 5px;
       border: 1px solid #ccc;
-      width: 90%;
-      max-width: 400px;
       text-transform: none;
     }
-
     /* Selección de avatar */
     #emojiSelection {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
       width: 100%;
@@ -172,23 +146,18 @@
       overflow-y: auto;
       margin-bottom: 20px;
     }
-
     .avatar-group {
       text-align: center;
-      flex: 1 1 200px;
     }
-
     .avatar-group h3 {
       margin-bottom: 10px;
       font-size: 1em;
     }
-
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
       gap: 5px;
     }
-
     .emoji-button {
       font-size: 2em;
       cursor: pointer;
@@ -197,28 +166,19 @@
       border-radius: 5px;
       padding: 5px;
     }
-
     .emoji-selected {
-      border-color: #0A2E40;
+      border-color: #a0522d;
       background-color: #ffe4e1;
     }
-
     #startButton {
-      background-color: #53BFD0; /* Turquesa claro */
-      color: #0A2E40;
+      background-color: #add8e6;
       border: none;
       border-radius: 5px;
       padding: 10px 20px;
       font-size: 1.2em;
       cursor: pointer;
       margin-top: 20px;
-      transition: background-color 0.3s, color 0.3s;
     }
-    #startButton:hover {
-      background-color: #3AA3B8;
-      color: #fff;
-    }
-
     /* Efectos visuales de caída */
     .effect {
       position: fixed;
@@ -232,39 +192,14 @@
       0% { transform: translateY(0); opacity: 1; }
       100% { transform: translateY(100vh); opacity: 0; }
     }
-
-    /* Footer con firma */
-    footer {
-      font-size: 0.8em;
-      text-align: center;
-      margin-top: 20px;
-      color: #555;
-    }
-
-    /* Media Queries para móviles */
-    @media (max-width: 600px) {
-      header {
-        position: static;
-        flex-direction: column;
-        text-align: center;
-      }
-      #scoreDisplay { margin-bottom: 10px; }
-      #gameContainer { margin-top: 20px; }
-      .question { font-size: 1.2em; }
-      .option-button { font-size: 1em; padding: 8px; }
-      #feedback, #explanation { font-size: 0.9em; }
-      #nextButton { font-size: 1em; padding: 8px 16px; }
-    }
   </style>
 </head>
 <body>
-  <!-- Header con barra superior -->
   <header id="header">
     <span id="scoreDisplay">JUGADOR: - PUNTOS: 0</span>
     <button id="restartButton">VOLVER A EMPEZAR</button>
   </header>
 
-  <!-- Contenedor principal del juego -->
   <div id="gameContainer">
     <div id="questionContainer" class="question"></div>
     <div id="optionsContainer" class="options"></div>
@@ -273,10 +208,7 @@
     <button id="nextButton">CONTINUA A LA SIGUIENTE PREGUNTA</button>
   </div>
 
-  <!-- Pantalla inicial -->
   <div id="startOverlay">
-    <!-- Logo: asegúrate de tener un archivo logo.png en la carpeta -->
-    <img id="logo" src="images/Logo.jpg" alt="APA Esclavas Chamberi">
     <h1>¡BIENVENIDA AL JUEGO DE HISTORIA DE LOS ROMANOS!</h1>
     <p>¿CÓMO TE LLAMAS?</p>
     <input type="text" id="playerName" placeholder="ESCRIBE TU NOMBRE">
@@ -285,7 +217,6 @@
       <div class="avatar-group" id="avatarBoys">
         <h3>NIÑOS</h3>
         <div class="grid">
-          <!-- Botones de avatar niños -->
           <span class="emoji-button" data-emoji="👦🏻">👦🏻</span>
           <span class="emoji-button" data-emoji="👦🏼">👦🏼</span>
           <span class="emoji-button" data-emoji="👦🏽">👦🏽</span>
@@ -302,7 +233,6 @@
       <div class="avatar-group" id="avatarGirls">
         <h3>NIÑAS</h3>
         <div class="grid">
-          <!-- Botones de avatar niñas -->
           <span class="emoji-button" data-emoji="👧🏻">👧🏻</span>
           <span class="emoji-button" data-emoji="👧🏼">👧🏼</span>
           <span class="emoji-button" data-emoji="👧🏽">👧🏽</span>
@@ -320,25 +250,15 @@
     <button id="startButton">COMENZAR</button>
   </div>
 
-  <!-- Footer con firma -->
-  <footer>
-    Creado por Alfonso Sainz de Baranda, APA Esclavas de Chamberí
-  </footer>
-
   <script>
-    /* =========================
-       VARIABLES Y CONFIGURACIÓN
-       ========================= */
     let questions = []; // Se cargarán desde preguntas.json
     let shuffledQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
     let playerEmoji = "";
     let playerName = "";
-
-    /* =========================
-       CARGA DE PREGUNTAS
-       ========================= */
+    
+    // Cargar preguntas desde preguntas.json
     function loadQuestions() {
       fetch('preguntas.json')
         .then(response => response.json())
@@ -349,25 +269,19 @@
         })
         .catch(error => console.error('Error cargando preguntas:', error));
     }
-
+    
     function shuffleArray(arr) {
       return arr.sort(() => Math.random() - 0.5);
     }
-
+    
     function shuffleQuestions() {
       shuffledQuestions = shuffleArray([...questions]);
     }
-
-    /* =========================
-       ACTUALIZAR MARCADOR
-       ========================= */
+    
     function updateHeader() {
       document.getElementById("scoreDisplay").textContent = `JUGADOR: ${playerName} ${playerEmoji} - PUNTOS: ${score}`;
     }
-
-    /* =========================
-       MOSTRAR PREGUNTA
-       ========================= */
+    
     function showQuestion() {
       document.getElementById("feedback").textContent = "";
       document.getElementById("explanation").textContent = "";
@@ -401,10 +315,7 @@
         optionsContainer.appendChild(button);
       });
     }
-
-    /* =========================
-       COMPROBAR RESPUESTA
-       ========================= */
+    
     function checkAnswer(selectedIndex) {
       const questionObj = shuffledQuestions[currentQuestionIndex];
       const feedbackEl = document.getElementById("feedback");
@@ -425,22 +336,19 @@
       currentQuestionIndex++;
       document.getElementById("nextButton").style.display = "block";
     }
-
-    /* =========================
-       EFECTOS VISUALES
-       ========================= */
+    
     function showCorrectEffect() {
       for (let i = 0; i < 10; i++) {
         createFallingEmoji(["🎉", "🎊", "🐱"]);
       }
     }
-
+    
     function showWrongEffect() {
       for (let i = 0; i < 10; i++) {
         createFallingEmoji(["😢", "☹️"]);
       }
     }
-
+    
     function createFallingEmoji(emojiArray) {
       const emoji = emojiArray[Math.floor(Math.random() * emojiArray.length)];
       const span = document.createElement("span");
@@ -452,10 +360,7 @@
       document.body.appendChild(span);
       setTimeout(() => span.remove(), 3000);
     }
-
-    /* =========================
-       REINICIAR JUEGO
-       ========================= */
+    
     function resetGame() {
       score = 0;
       currentQuestionIndex = 0;
@@ -466,10 +371,7 @@
       updateHeader();
       document.getElementById("startOverlay").style.display = "flex";
     }
-
-    /* =========================
-       SELECCIÓN DE AVATAR
-       ========================= */
+    
     document.querySelectorAll(".emoji-button").forEach(button => {
       button.addEventListener("click", () => {
         const group = button.parentElement;
@@ -478,10 +380,7 @@
         playerEmoji = button.getAttribute("data-emoji");
       });
     });
-
-    /* =========================
-       EVENTOS DE BOTONES
-       ========================= */
+    
     document.getElementById("startButton").addEventListener("click", () => {
       const nameInput = document.getElementById("playerName").value.trim();
       if (nameInput === "" || playerEmoji === "") {
@@ -494,20 +393,18 @@
       shuffleQuestions();
       showQuestion();
     });
-
+    
     document.getElementById("nextButton").addEventListener("click", () => {
       showQuestion();
     });
-
+    
     document.getElementById("restartButton").addEventListener("click", () => {
       if (confirm("¿DESEAS VOLVER A EMPEZAR?")) {
         resetGame();
       }
     });
-
-    /* =========================
-       INICIAR CARGA DE PREGUNTAS
-       ========================= */
+    
+    // Inicia la carga de preguntas desde preguntas.json
     loadQuestions();
   </script>
 </body>
